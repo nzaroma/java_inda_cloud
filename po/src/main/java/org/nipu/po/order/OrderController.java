@@ -1,6 +1,9 @@
 package org.nipu.po.order;
 
+import java.util.List;
+
 import org.nipu.po.order.clients.ProductSpecificationRepository;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,5 +29,13 @@ public class OrderController {
             throw new RuntimeException("There is no product specification with Id: " + specificationId);
         }
         return orderRepository.save(new ProductOrder(null, specificationId, 1l));
+    }
+
+    @GetMapping("/catalog/{specificationId}/orders")
+    public List<ProductOrder> getOrdersForCatalog(@PathVariable String specificationId) {
+        if (specificationRepository.existsById(specificationId) == null) {
+            throw new RuntimeException("There is no product specification with Id: " + specificationId);
+        }
+        return orderRepository.findAll();
     }
 }
