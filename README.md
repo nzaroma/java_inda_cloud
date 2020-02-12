@@ -48,7 +48,7 @@ spring.application.name=pc
 ### Build
 
 ```bash
-mvn clean package
+mvnw clean package
 ```
 
 ### Prepare environment
