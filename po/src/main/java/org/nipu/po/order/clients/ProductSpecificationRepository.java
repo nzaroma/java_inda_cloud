@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
  *
  * @author Nikita_Puzankov
  */
-//@FeignClient(name = "catalog", url = "localhost:8081", configuration = FeignConfiguration.class)
-@FeignClient(name = "pc", url = "localhost:8081", configuration = FeignConfiguration.class) //${pcurl} does not work
+// it does not work locally if in ${pcurl} i specify pc:8081
+@FeignClient(name = "pc", url = "${pcurl}", configuration = FeignConfiguration.class)
 public interface ProductSpecificationRepository {
 
     @RequestMapping(method = RequestMethod.GET, path = "/catalog/{specificationId}")
