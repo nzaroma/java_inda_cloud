@@ -29,5 +29,6 @@
         <module>po</module>
         <module>eureka-server</module>
         <module>config-server</module>
+        <module>zuul-server</module>
     </modules>
 </project>
