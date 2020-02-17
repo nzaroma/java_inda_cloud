@@ -139,3 +139,9 @@ Microservices specific:
 `git checkout containers` to continue.
 
 
+added config server
+added eureka server/clients
+added zuul
+
+
+
