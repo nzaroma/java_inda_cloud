@@ -1,0 +1,22 @@
+bootstrap:
+  servers: localhost:9092
+
+group:
+  id: groupId
+client:
+  id: clientId
+
+#cloud:
+#  stream:
+#    bindings:
+#      output:
+#        destination: inputSubscriber
+#    default:
+#      contentType: application/json
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: inputSubscriber
+          group: inputSubscriberGroup
